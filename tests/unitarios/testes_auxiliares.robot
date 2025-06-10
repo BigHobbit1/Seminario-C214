@@ -1,102 +1,98 @@
-from pathlib import Path
-
-testes_robot = """
 *** Settings ***
-Library           Collections
-Library           OperatingSystem
-Library           BuiltIn
-Library           ../../app/auxiliar.py
-
+Library    OperatingSystem
+Library    BuiltIn
+Library    lib_robot.py
 
 *** Test Cases ***
 
 # ======== Casos Positivos ========
 Validar Nome Correto
-    ${resultado}=    Call Method    auxiliar    validar_nome    Produto X
+    ${resultado}=    Validar Nome    Produto X
     Should Be True    ${resultado}
 
 Validar Preço Correto
-    ${resultado}=    Call Method    auxiliar    validar_preco    100.50
+    ${preco}=    Evaluate    100.5
+    ${resultado}=    validar_preco    ${preco}
     Should Be True    ${resultado}
 
 Validar Quantidade Correta
-    ${resultado}=    Call Method    auxiliar    validar_quantidade    5
+    ${quantidade}=    Evaluate    10
+    ${resultado}=    validar_quantidade    ${quantidade}
     Should Be True    ${resultado}
 
 Criar Produto Válido
-    ${resultado}=    Call Method    auxiliar    criar_produto_valido    Produto X    Tipo A    Marca Y    Modelo 1    200.0    10
+    ${preco}=        Evaluate    200.0
+    ${quantidade}=   Evaluate    10
+    ${resultado}=    criar_produto_valido    Produto X    Tipo A    Marca Y    Modelo 1    ${preco}    ${quantidade}
     Should Be True    ${resultado}
 
 Calcular Total Estoque
-    ${produtos}=    Create List    {"quantidade_estoque": 5}    {"quantidade_estoque": 10}
-    ${resultado}=    Call Method    auxiliar    calcular_total_estoque    ${produtos}
+    ${p1}=    Evaluate    {"quantidade_estoque": 5}
+    ${p2}=    Evaluate    {"quantidade_estoque": 10}
+    ${produtos}=    Create List    ${p1}    ${p2}
+    ${resultado}=    calcular_total_estoque    ${produtos}
     Should Be Equal As Integers    ${resultado}    15
 
 Verificar Peças Necessárias Presentes
-    ${resultado}=    Call Method    auxiliar    verificar_pecas_necessarias    ["CPU", "RAM", "HD"]    ["CPU", "HD"]
+    ${resultado}=    Verificar Pecas Necessarias    ["CPU", "RAM", "HD"]    ["CPU", "HD"]
     Should Be True    ${resultado}
 
 Montar Computador com Estoque
-    ${estoque}=    Create Dictionary    CPU=1    RAM=1
-    ${resultado}=    Call Method    auxiliar    montar_computador    ${estoque}    ["CPU", "RAM"]
+    ${estoque}=    Evaluate    {"CPU": 1, "RAM": 1}    modules=builtins
+    ${resultado}=    montar_computador    ${estoque}    ["CPU", "RAM"]
     Should Be True    ${resultado}
 
 Pode Realizar Venda
     ${estoque}=    Create Dictionary    Mouse=5
-    ${resultado}=    Call Method    auxiliar    pode_realizar_venda    ${estoque}    Mouse    3
+    ${resultado}=    Pode Realizar Venda    ${estoque}    Mouse    3
     Should Be True    ${resultado}
 
 Registrar Venda Válida
-    ${estoque}=    Create Dictionary    Teclado=10
-    ${novo_estoque}=    Call Method    auxiliar    registrar_venda    ${estoque}    Teclado    3
-    Dictionary Should Contain Value    ${novo_estoque}    7
+    ${estoque}=    Evaluate    {"Teclado": 10}    modules=builtins
+    ${quantidade}=    Evaluate    3    modules=builtins
+    ${resultado}=    registrar_venda    ${estoque}    Teclado    ${quantidade}
+    Dictionary Should Contain Value    ${resultado}    7
+
+Verificar Peças Necessárias Ausentes (Negativo Esperado)
+    ${resultado}=    Verificar Pecas Necessarias    ["CPU", "RAM"]    ["CPU", "GPU"]
+    Should Be True    not ${resultado}
 
 # ======== Casos Negativos ========
 Nome Inválido Vazio
-    ${resultado}=    Call Method    auxiliar    nome_invalido    ${EMPTY}
+    ${resultado}=    Nome Invalido    ${EMPTY}
     Should Be True    ${resultado}
 
 Nome Inválido Tipo Errado
-    ${resultado}=    Call Method    auxiliar    nome_invalido    123
+    ${valor}=    Evaluate    123
+    ${resultado}=    nome_invalido    ${valor}
     Should Be True    ${resultado}
 
 Preço Inválido Negativo
-    ${resultado}=    Call Method    auxiliar    preco_invalido    -10.5
+    ${resultado}=    Preco Invalido    -10.5
     Should Be True    ${resultado}
 
 Preço Inválido Tipo Errado
-    ${resultado}=    Call Method    auxiliar    preco_invalido    abc
+    ${resultado}=    Preco Invalido    abc
     Should Be True    ${resultado}
 
 Quantidade Inválida Negativa
-    ${resultado}=    Call Method    auxiliar    quantidade_invalida    -1
+    ${resultado}=    Quantidade Invalida    -1
     Should Be True    ${resultado}
 
 Quantidade Inválida Tipo Errado
-    ${resultado}=    Call Method    auxiliar    quantidade_invalida    Dois
+    ${resultado}=    Quantidade Invalida    Dois
     Should Be True    ${resultado}
 
 Montar Computador com Peças Faltando
     ${estoque}=    Create Dictionary    CPU=1    RAM=0
-    ${resultado}=    Call Method    auxiliar    montar_computador_faltando_pecas    ${estoque}    ["CPU", "RAM"]
+    ${resultado}=    Montar Computador Faltando Pecas    ${estoque}    ["CPU", "RAM"]
     Should Be True    ${resultado}
 
 Tentar Venda com Estoque Insuficiente
     ${estoque}=    Create Dictionary    Monitor=2
-    ${resultado}=    Call Method    auxiliar    tentar_venda_sem_estoque    ${estoque}    Monitor    5
+    ${resultado}=    Tentar Venda Sem Estoque    ${estoque}    Monitor    5
     Should Be True    ${resultado}
 
 Registrar Venda Inválida (Sem Estoque)
     ${estoque}=    Create Dictionary    SSD=1
-    Run Keyword And Expect Error    *    Call Method    auxiliar    registrar_venda    ${estoque}    SSD    2
-
-Verificar Peças Necessárias Ausentes
-    ${resultado}=    Call Method    auxiliar    verificar_pecas_necessarias    ["CPU", "RAM"]    ["CPU", "GPU"]
-    Should Be False    ${resultado}
-"""
-
-testes_path = Path("testes/unitarios/testes_auxiliares.robot")
-testes_path.parent.mkdir(parents=True, exist_ok=True)
-testes_path.write_text(testes_robot.strip(), encoding="utf-8")
-
-testes_path
+    Run Keyword And Expect Error    *Estoque insuficiente para a venda.*    registrar_venda    ${estoque}    SSD    5
