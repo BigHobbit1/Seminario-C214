@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.11.5 on win32)" generated="2025-06-10T04:28:57.333962" rpa="false" schemaversion="5">
+<suite id="s1" name="Unitarios" source="C:\Users\vitor\Documents\GitHub\Seminario-C214\tests\unitarios">
+<suite id="s1-s1" name="Testes Auxiliares" source="C:\Users\vitor\Documents\GitHub\Seminario-C214\tests\unitarios\testes_auxiliares.robot">
+<test id="s1-s1-t1" name="Validar Nome Correto" line="14">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.403451" level="FAIL">str object does not have method 'validar_nome'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>validar_nome</arg>
+<arg>Produto X</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.403451" elapsed="0.001040">str object does not have method 'validar_nome'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.405019" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.402451" elapsed="0.002568">str object does not have method 'validar_nome'.</status>
+</test>
+<test id="s1-s1-t2" name="Validar Preço Correto" line="18">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.409943" level="FAIL">str object does not have method 'validar_preco'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>validar_preco</arg>
+<arg>100.50</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.409943" elapsed="0.000000">str object does not have method 'validar_preco'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.410943" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.408886" elapsed="0.002057">str object does not have method 'validar_preco'.</status>
+</test>
+<test id="s1-s1-t3" name="Validar Quantidade Correta" line="22">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.413941" level="FAIL">str object does not have method 'validar_quantidade'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>validar_quantidade</arg>
+<arg>5</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.412944" elapsed="0.000997">str object does not have method 'validar_quantidade'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.413941" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.412944" elapsed="0.000997">str object does not have method 'validar_quantidade'.</status>
+</test>
+<test id="s1-s1-t4" name="Criar Produto Válido" line="26">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.417941" level="FAIL">str object does not have method 'criar_produto_valido'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>criar_produto_valido</arg>
+<arg>Produto X</arg>
+<arg>Tipo A</arg>
+<arg>Marca Y</arg>
+<arg>Modelo 1</arg>
+<arg>200.0</arg>
+<arg>10</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.416943" elapsed="0.000998">str object does not have method 'criar_produto_valido'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.418393" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.416943" elapsed="0.001450">str object does not have method 'criar_produto_valido'.</status>
+</test>
+<test id="s1-s1-t5" name="Calcular Total Estoque" line="30">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.423080" level="INFO">${produtos} = ['{"quantidade_estoque": 5}', '{"quantidade_estoque": 10}']</msg>
+<var>${produtos}</var>
+<arg>{"quantidade_estoque": 5}</arg>
+<arg>{"quantidade_estoque": 10}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-06-10T04:28:57.422084" elapsed="0.000996"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.423080" level="FAIL">str object does not have method 'calcular_total_estoque'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>calcular_total_estoque</arg>
+<arg>${produtos}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.423080" elapsed="0.000998">str object does not have method 'calcular_total_estoque'.</status>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${resultado}</arg>
+<arg>15</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.424417" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.421086" elapsed="0.003331">str object does not have method 'calcular_total_estoque'.</status>
+</test>
+<test id="s1-s1-t6" name="Verificar Peças Necessárias Presentes" line="35">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.427427" level="FAIL">str object does not have method 'verificar_pecas_necessarias'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>verificar_pecas_necessarias</arg>
+<arg>["CPU", "RAM", "HD"]</arg>
+<arg>["CPU", "HD"]</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.427427" elapsed="0.000000">str object does not have method 'verificar_pecas_necessarias'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.427427" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.426429" elapsed="0.001999">str object does not have method 'verificar_pecas_necessarias'.</status>
+</test>
+<test id="s1-s1-t7" name="Montar Computador com Estoque" line="39">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.431428" level="INFO">${estoque} = {'CPU': '1', 'RAM': '1'}</msg>
+<var>${estoque}</var>
+<arg>CPU=1</arg>
+<arg>RAM=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-10T04:28:57.430428" elapsed="0.001000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.431428" level="FAIL">str object does not have method 'montar_computador'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>montar_computador</arg>
+<arg>${estoque}</arg>
+<arg>["CPU", "RAM"]</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.431428" elapsed="0.001001">str object does not have method 'montar_computador'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.432429" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.430428" elapsed="0.003009">str object does not have method 'montar_computador'.</status>
+</test>
+<test id="s1-s1-t8" name="Pode Realizar Venda" line="44">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.436442" level="INFO">${estoque} = {'Mouse': '5'}</msg>
+<var>${estoque}</var>
+<arg>Mouse=5</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-10T04:28:57.435429" elapsed="0.001013"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.437470" level="FAIL">str object does not have method 'pode_realizar_venda'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>pode_realizar_venda</arg>
+<arg>${estoque}</arg>
+<arg>Mouse</arg>
+<arg>3</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.437470" elapsed="0.000000">str object does not have method 'pode_realizar_venda'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.438442" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.435429" elapsed="0.003013">str object does not have method 'pode_realizar_venda'.</status>
+</test>
+<test id="s1-s1-t9" name="Registrar Venda Válida" line="49">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.442950" level="INFO">${estoque} = {'Teclado': '10'}</msg>
+<var>${estoque}</var>
+<arg>Teclado=10</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-10T04:28:57.442950" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.443655" level="FAIL">str object does not have method 'registrar_venda'.</msg>
+<var>${novo_estoque}</var>
+<arg>auxiliar</arg>
+<arg>registrar_venda</arg>
+<arg>${estoque}</arg>
+<arg>Teclado</arg>
+<arg>3</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.443655" elapsed="0.000000">str object does not have method 'registrar_venda'.</status>
+</kw>
+<kw name="Dictionary Should Contain Value" owner="Collections">
+<arg>${novo_estoque}</arg>
+<arg>7</arg>
+<doc>Fails if ``value`` is not found from ``dictionary``.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.443655" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.442434" elapsed="0.002232">str object does not have method 'registrar_venda'.</status>
+</test>
+<test id="s1-s1-t10" name="Nome Inválido Vazio" line="55">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.447667" level="FAIL">str object does not have method 'nome_invalido'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>nome_invalido</arg>
+<arg>${EMPTY}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.446666" elapsed="0.001001">str object does not have method 'nome_invalido'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.447667" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.446666" elapsed="0.002000">str object does not have method 'nome_invalido'.</status>
+</test>
+<test id="s1-s1-t11" name="Nome Inválido Tipo Errado" line="59">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.451685" level="FAIL">str object does not have method 'nome_invalido'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>nome_invalido</arg>
+<arg>123</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.451685" elapsed="0.000000">str object does not have method 'nome_invalido'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.452672" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.450666" elapsed="0.002006">str object does not have method 'nome_invalido'.</status>
+</test>
+<test id="s1-s1-t12" name="Preço Inválido Negativo" line="63">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.457674" level="FAIL">str object does not have method 'preco_invalido'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>preco_invalido</arg>
+<arg>-10.5</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.457674" elapsed="0.000000">str object does not have method 'preco_invalido'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.457674" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.456667" elapsed="0.001999">str object does not have method 'preco_invalido'.</status>
+</test>
+<test id="s1-s1-t13" name="Preço Inválido Tipo Errado" line="67">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.460998" level="FAIL">str object does not have method 'preco_invalido'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>preco_invalido</arg>
+<arg>abc</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.460998" elapsed="0.000000">str object does not have method 'preco_invalido'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.461700" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.459666" elapsed="0.002034">str object does not have method 'preco_invalido'.</status>
+</test>
+<test id="s1-s1-t14" name="Quantidade Inválida Negativa" line="71">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.464394" level="FAIL">str object does not have method 'quantidade_invalida'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>quantidade_invalida</arg>
+<arg>-1</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.464394" elapsed="0.000000">str object does not have method 'quantidade_invalida'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.464394" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.463689" elapsed="0.001718">str object does not have method 'quantidade_invalida'.</status>
+</test>
+<test id="s1-s1-t15" name="Quantidade Inválida Tipo Errado" line="75">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.469408" level="FAIL">str object does not have method 'quantidade_invalida'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>quantidade_invalida</arg>
+<arg>Dois</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.469408" elapsed="0.001001">str object does not have method 'quantidade_invalida'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.470409" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.467407" elapsed="0.004001">str object does not have method 'quantidade_invalida'.</status>
+</test>
+<test id="s1-s1-t16" name="Montar Computador com Peças Faltando" line="79">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.473406" level="INFO">${estoque} = {'CPU': '1', 'RAM': '0'}</msg>
+<var>${estoque}</var>
+<arg>CPU=1</arg>
+<arg>RAM=0</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-10T04:28:57.473406" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.474406" level="FAIL">str object does not have method 'montar_computador_faltando_pecas'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>montar_computador_faltando_pecas</arg>
+<arg>${estoque}</arg>
+<arg>["CPU", "RAM"]</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.474406" elapsed="0.000000">str object does not have method 'montar_computador_faltando_pecas'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.474406" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.472420" elapsed="0.002987">str object does not have method 'montar_computador_faltando_pecas'.</status>
+</test>
+<test id="s1-s1-t17" name="Tentar Venda com Estoque Insuficiente" line="84">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.478446" level="INFO">${estoque} = {'Monitor': '2'}</msg>
+<var>${estoque}</var>
+<arg>Monitor=2</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-10T04:28:57.477406" elapsed="0.001040"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.478446" level="FAIL">str object does not have method 'tentar_venda_sem_estoque'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>tentar_venda_sem_estoque</arg>
+<arg>${estoque}</arg>
+<arg>Monitor</arg>
+<arg>5</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.478446" elapsed="0.000000">str object does not have method 'tentar_venda_sem_estoque'.</status>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${resultado}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-06-10T04:28:57.479407" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.477406" elapsed="0.002001">str object does not have method 'tentar_venda_sem_estoque'.</status>
+</test>
+<test id="s1-s1-t18" name="Registrar Venda Inválida (Sem Estoque)" line="89">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.483413" level="INFO">${estoque} = {'SSD': '1'}</msg>
+<var>${estoque}</var>
+<arg>SSD=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-10T04:28:57.482407" elapsed="0.001006"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.484036" level="FAIL">str object does not have method 'registrar_venda'.</msg>
+<arg>auxiliar</arg>
+<arg>registrar_venda</arg>
+<arg>${estoque}</arg>
+<arg>SSD</arg>
+<arg>2</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.484036" elapsed="0.000000">str object does not have method 'registrar_venda'.</status>
+</kw>
+<arg>*</arg>
+<arg>Call Method</arg>
+<arg>auxiliar</arg>
+<arg>registrar_venda</arg>
+<arg>${estoque}</arg>
+<arg>SSD</arg>
+<arg>2</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2025-06-10T04:28:57.484036" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-06-10T04:28:57.481408" elapsed="0.003785"/>
+</test>
+<test id="s1-s1-t19" name="Verificar Peças Necessárias Ausentes" line="93">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-06-10T04:28:57.488204" level="FAIL">str object does not have method 'verificar_pecas_necessarias'.</msg>
+<var>${resultado}</var>
+<arg>auxiliar</arg>
+<arg>verificar_pecas_necessarias</arg>
+<arg>["CPU", "RAM"]</arg>
+<arg>["CPU", "GPU"]</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2025-06-10T04:28:57.488204" elapsed="0.000000">str object does not have method 'verificar_pecas_necessarias'.</status>
+</kw>
+<kw name="Should Be False">
+<arg>${resultado}</arg>
+<status status="NOT RUN" start="2025-06-10T04:28:57.489206" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-06-10T04:28:57.486203" elapsed="0.003003">str object does not have method 'verificar_pecas_necessarias'.</status>
+</test>
+<test id="s1-s1-t20" name="&quot;&quot;&quot;" line="96">
+<status status="FAIL" start="2025-06-10T04:28:57.491204" elapsed="0.001001">Test cannot be empty.</status>
+</test>
+<test id="s1-s1-t21" name="testes_path = Path(&quot;testes/unitarios/testes_auxiliares.robot&quot;)" line="98">
+<status status="FAIL" start="2025-06-10T04:28:57.493204" elapsed="0.001001">Test cannot be empty.</status>
+</test>
+<test id="s1-s1-t22" name="testes_path.parent.mkdir(parents=True, exist_ok=True)" line="99">
+<status status="FAIL" start="2025-06-10T04:28:57.496204" elapsed="0.000000">Test cannot be empty.</status>
+</test>
+<test id="s1-s1-t23" name="testes_path.write_text(testes_robot.strip(), encoding=&quot;utf-8&quot;)" line="100">
+<status status="FAIL" start="2025-06-10T04:28:57.499208" elapsed="0.002191">Test cannot be empty.</status>
+</test>
+<test id="s1-s1-t24" name="testes_path" line="102">
+<status status="FAIL" start="2025-06-10T04:28:57.502936" elapsed="0.001003">Test cannot be empty.</status>
+</test>
+<status status="FAIL" start="2025-06-10T04:28:57.373959" elapsed="0.131978"/>
+</suite>
+<status status="FAIL" start="2025-06-10T04:28:57.336960" elapsed="0.170977"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="23" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Unitarios" id="s1" pass="1" fail="23" skip="0">Unitarios</stat>
+<stat name="Testes Auxiliares" id="s1-s1" pass="1" fail="23" skip="0">Unitarios.Testes Auxiliares</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

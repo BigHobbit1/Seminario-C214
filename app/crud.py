@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-import models, schemas
+import app.models as models, app.schemas as schemas
 
 def criar_produto(db: Session, produto: schemas.ProdutoCreate):
     db_produto = models.Produto(**produto.dict())
