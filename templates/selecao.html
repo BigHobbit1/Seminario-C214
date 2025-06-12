@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>MontaPC - Seleção de Peças</title>
+</head>
+<body>
+    <h1>Escolha as Peças</h1>
+    <form action="/selecao" method="post" id="pecas-form">
+        
+        {% for tipo, componentes in pecas_agrupadas.items() %}
+            <h3>{{ tipo }}s</h3>
+            {% for peca in componentes %}
+                <input type="radio" name="{{ tipo }}" value="{{ peca.id }}" required> {{ peca.marca }} {{ peca.modelo }} - R$ {{ "%.2f"|format(peca.preco) }}<br>
+            {% endfor %}
+        {% endfor %}
+
+        <br>
+        <button type="submit" id="buy-button">Comprar</button>
+    </form>
+</body>
+</html>
