@@ -44,7 +44,6 @@ def registrar_venda(estoque: Dict[str, int], produto: str, quantidade: int) -> D
     estoque[produto] -= quantidade
     return estoque
 
-# ===== Funções Negativas Auxiliares para Testes =====
 def nome_invalido(nome: str) -> bool:
     return not isinstance(nome, str) or nome.strip() == ""
 

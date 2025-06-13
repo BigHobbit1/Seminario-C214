@@ -1,6 +1,8 @@
 *** Settings ***
 Library    RequestsLibrary
-Variables    variables.robot    file
+
+*** Variables ***
+${BASE_URL}    http://localhost:8000
 
 *** Keywords ***
 Iniciar Sessão
