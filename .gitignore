@@ -1,0 +1,61 @@
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# Virtual Environments
+venv/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# Docker
+**/docker-compose.override.yml
+docker-compose*.yml
+Dockerfile
+.docker/
+
+# FastAPI (caso haja arquivos gerados pelo FastAPI)
+*.db
+*.sqlite3
+*.pkl
+
+# PyCharm, VSCode, IDEs, etc.
+.idea/
+.vscode/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Teste com Robot Framework
+*.robot.*
+output.xml
+log.html
+report.html
+
+# Configurações do Jenkins
+*.jenkins
+jenkins_home/
+*.log
+
+# Outros arquivos temporários
+*.bak
+*.swp
+*.swo
+*~
+*.tmp
+*.log
+
+# Configurações do sistema (exemplo no Linux)
+.DS_Store
+Thumbs.db
