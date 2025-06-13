@@ -17,7 +17,7 @@
    Abra o terminal e navegue até a pasta do projeto com o comando:
 
    ```bash
-   cd <nome_da_pasta_do_repositorio>
+   cd Seminario-C214
    ```
 
 4. **Construa a imagem Docker**  
