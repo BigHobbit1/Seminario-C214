@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        docker-compose -f  docker-compose.yml up -d --build
+                        docker-compose -f $DOCKER_COMPOSE_FILE up -d --build
                     '''
                 }
             }
