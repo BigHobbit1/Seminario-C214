@@ -10,7 +10,7 @@
    Clone o repositório para o seu computador com o seguinte comando:
 
    ```bash
-   git clone <(https://github.com/BigHobbit1/Seminario-C214)>
+   git clone https://github.com/BigHobbit1/Seminario-C214
    ```
 
 3. **Acesse a pasta do projeto**  
